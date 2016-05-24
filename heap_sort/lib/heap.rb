@@ -1,5 +1,3 @@
-require 'byebug'
-
 class BinaryMinHeap
   def initialize(&prc)
     @prc = prc
