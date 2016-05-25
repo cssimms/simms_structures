@@ -8,7 +8,7 @@ class RingBuffer
     @store = StaticArray.new(size)
     @start_idx = 0
     @length = 0
-    @capacity = 8
+    @capacity = size
   end
 
   def relative_index(index)
