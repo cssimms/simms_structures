@@ -48,7 +48,7 @@ class BinaryMinHeap
     prc ||= Proc.new { |a, b| a <=> b }
 
     child_idxs = BinaryMinHeap.child_indices(len, parent_idx)
-
+# debugger
     if child_idxs.empty?
       return array
     elsif child_idxs.count == 1

@@ -10,9 +10,10 @@ class Array
     end
 
     (length - 1).downto(1) do |idx|
-      debugger
       self[0], self[idx] = self[idx], self[0]
-      BinaryMinHeap.heapify_down(self, 0, idx + 1 )
+      BinaryMinHeap.heapify_down(self, 0, idx )
     end
+
+    reverse!
   end
 end
