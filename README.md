@@ -1,14 +1,9 @@
-# algos_n_structures
-A collection of Algorithms and Data Structures written in Ruby
-
+# Algorithms and Data Structures written in Ruby
+A collection of data structures and algorithms written for practice and to build understanding.
 
 #### Dynamic Array
-Built on Ruby's dynamic array, etc. etc.
 
 #### Integer Sets
-Max Integer Set
-Integer Set
-Resizing Integer Set
 
 #### Hash Set
 
