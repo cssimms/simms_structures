@@ -1,10 +1,11 @@
 require 'byebug'
 class QuickSort
-  # Quick sort has average case time complexity O(nlogn), but worst
+  # Quick sort has average time complexity O(nlogn), but worst
   # case O(n**2).
 
   # Not in-place. Uses O(n) memory.
   def self.sort1(array)
+    return array if array.length < 2
     pivot = array.first
 
     left = []
@@ -18,7 +19,7 @@ class QuickSort
       end
     end
 
-    QuickSort.sort1(left) + [pivot] + QuickSort.sort2(right)
+    QuickSort.sort1(left) + [pivot] + QuickSort.sort1(right)
   end
 
   # In-place.
