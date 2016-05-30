@@ -129,16 +129,34 @@ class BinarySearchTree
     node
   end
 
+  def self.delete_max!(node)
+    return nil unless node
+    return node.left unless node.right
+    node.right = BinarySearchTree.delete_max!(node.right)
+    node
+  end
+
   def self.delete!(node, value)
     return nil unless node
 
     case node.value <=> value
     when 0
-      
+      if node.right
+        right_min = BinarySearchTree.min(node.right)
+        node.value, right_min.value = right_min.value, node.value
+        BinarySearchTree.delete_min(node)
+
+      elsif node.left
+        left_max = BinarySearchTree.max(node.left)
+        node.value, left_max.value = left_max.value, node.value
+        BinarySearchTree.delete_max(node)
+      else
+        nil
+      end
     when 1
-      BinarySearchTree.delete!(node.left)
+      node.left = BinarySearchTree.delete!(node.left, value)
     when -1
-      BinarySearchTree.delete!(node.right)
+      node.right = BinarySearchTree.delete!(node.right, value)
     end
   end
 end
