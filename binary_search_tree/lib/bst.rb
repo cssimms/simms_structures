@@ -88,11 +88,18 @@ class BinarySearchTree
   end
 
   def self.inorder!(node)
+    return [] unless node
 
   end
 
   def self.postorder!(node)
 
+  end
+
+  def chitlins(node)
+    return node unless node.left || node.right
+
+    
   end
 
   def self.height!(node)
