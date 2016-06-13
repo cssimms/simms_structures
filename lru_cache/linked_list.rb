@@ -1,5 +1,3 @@
-require 'byebug'
-
 class Link
   attr_accessor :key, :val, :next, :prev
 
@@ -60,7 +58,8 @@ class LinkedList
   end
 
   def remove(key)
-    link = self[key]
+    link = self[key]  #the O(n) step
+
     return nil unless link
 
     if link == first

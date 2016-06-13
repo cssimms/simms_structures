@@ -1,8 +1,3 @@
-class Fixnum
-
-  # Fixnum#hash already implemented for you
-end
-
 class Array
   # this doesn't type check, but needs the array to be only integer values.
   # XOR and converting to binary produces a unique binary digit, which is then
@@ -27,6 +22,13 @@ end
 
 class Hash
   def hash
-    values.sort.map{ |el| el.hash }.hash
+    hashed_array = []
+    each do |key, val|
+      hashed_array << key.hash * val.hash
+    end
+
+    # we need to sort the hashed_array to ensure that the same hash is
+    # generated from two hashes with different order of elements
+    hashed_array.sort.hash
   end
 end
