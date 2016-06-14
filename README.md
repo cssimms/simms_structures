@@ -1,7 +1,7 @@
 # Algorithms and Data Structures written in Ruby
 A collection of data structures and algorithms written for practice and to build understanding.
 
-### Dynamic Array
+## Dynamic Array
 
 #### Static Array
 
@@ -13,9 +13,9 @@ A somewhat silly implementation of a Dynamic Array. Built off my own version of 
 
 #### Ring Buffer
 
-Essentially a Dynamic Array with wrap-around, the ring buffer achieves O(1) shift and unshift (amortized) time. The wrap around is achieved by using modular arithmetic, and storing an index that represents the beginning of the Array.  
+Essentially a Dynamic Array with wrap-around, the ring buffer achieves O(1) shift and unshift (amortized) time. The wrap around is achieved by using modular arithmetic and storing an index that represents the beginning of the Array.  
 
-### LRU Cache
+## LRU Cache
 
 #### Hash Set and HashMap
 
@@ -31,10 +31,10 @@ A simple doubly-linked list. I included the Enumerable module, and the Link clas
 
 The Least Recently Used Cache is a collection of objects that has a specific order. The order is determined by which object has been added most recently. My LinkedList class keeps the order of the objects, but this makes lookup on the cache quite slow. In order to keep a constant lookup time, I use a HashMap in tandem with the LinkedList. The Cache only has one main method, #get, which either stores the new value or refreshes the order of that value in the list.
 
-### QuickSort
+## QuickSort
 
 The famous QuickSort, before I've always implemented without mutating the original array, which is O(n) in space complexity. The method #sort2 sorts the array in place, keeping multiple pointers and using a helper method, #partition. This keeps the sort at constant space complexity.
 
-### Binary Min Heap / Heap Sort
+## Binary Min Heap / Heap Sort
 
-A Binary Minimum Heap, the beast of this data structure is the Heapify Up/Down. All the leg work in the data structure means that Heap Sort is quite simple to implement. 
+A Binary Minimum Heap, the beast of this data structure is the Heapify Up/Down. All the leg work in the data structure means that Heap Sort is quite simple to implement.
