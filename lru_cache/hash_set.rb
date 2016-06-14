@@ -35,13 +35,13 @@ class HashSet
   end
 
   def resize!
-      old_store = @store
-      new_num_buckets = num_buckets * 2
+    old_store = @store
+    new_num_buckets = num_buckets * 2
 
-      @store = Array.new(new_num_buckets) { Array.new }
-      @count = 0
+    @store = Array.new(new_num_buckets) { Array.new }
+    @count = 0
 
-      old_store.each do |bucket|
+    old_store.each do |bucket|
       bucket.each { |num| insert(num) }
     end
   end

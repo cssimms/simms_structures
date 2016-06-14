@@ -20,8 +20,7 @@ class BinaryMinHeap
     output
   end
 
-# change name to insert later
-  def push(val)
+  def insert(val)
     @store.push(val)
     BinaryMinHeap.heapify_up(@store, @store.length - 1)
   end
