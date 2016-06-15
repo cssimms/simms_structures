@@ -11,7 +11,14 @@ class StaticArray
 
   # O(1)
   def []=(index, value)
+    check_index(index)
     @store[index] = value
+  end
+
+  private
+
+  def check_index(idx)
+    raise TypeError 'Invalid Position' if 0 > idx || idx > @store.length
   end
 
   protected

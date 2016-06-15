@@ -1,6 +1,4 @@
-require_relative "heap"
-require 'byebug'
-
+require_relative 'heap'
 
 class Array
   def heap_sort!

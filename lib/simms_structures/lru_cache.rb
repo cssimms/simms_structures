@@ -1,5 +1,5 @@
-require_relative 'p05_hash_map'
-require_relative 'p04_linked_list'
+require_relative 'hash_map'
+require_relative 'linked_list'
 
 class LRUCache
 

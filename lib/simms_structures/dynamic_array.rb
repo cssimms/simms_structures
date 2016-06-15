@@ -1,5 +1,4 @@
 require_relative "static_array"
-require 'byebug'
 
 class DynamicArray
   attr_reader :length
@@ -62,7 +61,7 @@ class DynamicArray
   attr_writer :length
 
   def check_index(index)
-    
+
   end
 
   # O(n): has to copy over all the elements to the new store.

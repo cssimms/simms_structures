@@ -1,5 +1,5 @@
-require_relative 'p02_hashing'
-require_relative 'p04_linked_list'
+require_relative 'hashing'
+require_relative 'linked_list'
 
 class HashMap
 
