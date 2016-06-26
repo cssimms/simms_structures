@@ -42,7 +42,6 @@ class LRUCache
   # move a link to the end of the list
   def update_link!(link)
     @store.insert(link.key, link.val)
-
   end
 
   def eject!

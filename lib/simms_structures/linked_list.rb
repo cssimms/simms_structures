@@ -83,7 +83,6 @@ class LinkedList
       link = link.next
       break unless link
     end
-
   end
 
   def to_s
