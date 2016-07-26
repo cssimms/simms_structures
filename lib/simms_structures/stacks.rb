@@ -23,7 +23,7 @@ end
 # Uses Modular Arithmetic to distribute values accross the array
 # This implementation is of course pretty bad for Space Complexity, as we have
 # to store empty fields to accomidate the space for one stack being longer than
-# the others. This is a fine solution is we expect our Stacks to contain
+# the others. This is a fine solution if we expect our Stacks to contain
 # roughly the same number of elements, though.
 
 class ThreeStacks
