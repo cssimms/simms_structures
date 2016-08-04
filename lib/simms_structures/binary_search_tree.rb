@@ -21,11 +21,7 @@ class BinarySearchTree
   end
 
   def insert(value)
-    if @root
-      BinarySearchTree.insert!(@root, value)
-    else
-      @root = BSTNode.new(value)
-    end
+    @root = BinarySearchTree.insert!(@root, value)
   end
 
   def find(value)
