@@ -11,7 +11,7 @@ class BSTNode
   end
 
   def inspect
-    "Node: #{@value}"
+    "Node: #{@value} => #{BinarySearchTree.inorder!(self)}"
   end
 end
 
@@ -21,39 +21,43 @@ class BinarySearchTree
   end
 
   def insert(value)
-
+    if @root
+      BinarySearchTree.insert!(@root, value)
+    else
+      @root = BSTNode.new(value)
+    end
   end
 
   def find(value)
-
+    BinarySearchTree.find!(@root, value)
   end
 
   def inorder
-
+    BinarySearchTree.inorder!(@root)
   end
 
   def postorder
-
+    BinarySearchTree.postorder!(@root)
   end
 
   def preorder
-
+    BinarySearchTree.preorder!(@root)
   end
 
   def height
-
+    BinarySearchTree.height!(@root)
   end
 
   def min
-
+    BinarySearchTree.min(@root)
   end
 
   def max
-
+    BinarySearchTree.max(@root)
   end
 
   def delete(value)
-
+    BinarySearchTree.delete!(@root, value)
   end
 
   def self.insert!(node = nil, value)
@@ -83,16 +87,12 @@ class BinarySearchTree
     end
   end
 
-  # def self.preorder!(node)
-  #   return [] unless node
-  #   left_side = BinarySearchTree.preorder!(node.left)
-  #   right_side = BinarySearchTree.preorder!(node.right)
-  #
-  #   [node.value] + left_side + right_side
-  # end
-
   def self.preorder!(node)
-    []
+    return [] unless node
+    left_side = BinarySearchTree.preorder!(node.left)
+    right_side = BinarySearchTree.preorder!(node.right)
+
+    [node.value] + left_side + right_side
   end
 
   def self.inorder!(node)
@@ -106,8 +106,8 @@ class BinarySearchTree
   def self.postorder!(node)
     return [] unless node
 
-    left_side = BinarySearchTree.preorder!(node.left)
-    right_side = BinarySearchTree.preorder!(node.right)
+    left_side = BinarySearchTree.postorder!(node.left)
+    right_side = BinarySearchTree.postorder!(node.right)
 
     left_side + right_side + [node.value]
   end
@@ -166,6 +166,7 @@ class BinarySearchTree
         left_max = BinarySearchTree.max(node.left)
         node.value, left_max.value = left_max.value, node.value
         BinarySearchTree.delete_max(node)
+
       else
         nil
       end
